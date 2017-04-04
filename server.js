@@ -13,7 +13,7 @@ app.get('/get-file-size', multipartMiddleware, function(req,res){
 });
 
 app.post('/get-file-size', multipartMiddleware, function(req,res){
-    res.send('File size: ' + req.files.file.size.toString() + ' bytes');
+    res.send(JSON.stringify({'File size' : req.files.file.size.toString() + ' bytes'}));
 });
 
 app.listen(8080,function(){
